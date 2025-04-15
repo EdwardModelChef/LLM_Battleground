@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Battleground</title>
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>LLM Battleground - MVP</h1>
+
+    <div class="controls-area top-controls">
+        <div class="model-selection">
+            <label for="white-model">White Model:</label>
+            <select id="white-model">
+                <option value="gpt-4o">OpenAI GPT-4o</option>
+                <option value="o1">OpenAI o1</option>
+                <option value="claude-3-7-sonnet-20250219">Anthropic Claude 3.7 Sonnet</option>
+            </select>
+            <label for="black-model">Black Model:</label>
+            <select id="black-model">
+                <option value="gpt-4o">OpenAI GPT-4o</option>
+                <option value="o1">OpenAI o1</option>
+                <option value="claude-3-7-sonnet-20250219">Anthropic Claude 3.7 Sonnet</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="main-content-area">
+        <div class="side-panel white-panel">
+            <div class="prompt-input">
+                <label for="white-prompt">White System Prompt:</label>
+                <textarea id="white-prompt" rows="4"></textarea>
+            </div>
+            <div class="output-box white-output">
+                <h3>White's Output History</h3>
+                <pre id="white-output">-</pre>
+            </div>
+        </div>
+
+        <div class="center-panel">
+            <div id="game-board" style="width: 400px"></div>
+            <div class="prompt-input">
+                <div id="status">Game Status: Waiting to start...</div>
+                <div class="game-buttons">
+                    <button id="start-button">Start New Game</button>
+                    <button id="stop-button" disabled>Stop Game</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-panel black-panel">
+            <div class="prompt-input">
+                <label for="black-prompt">Black System Prompt:</label>
+                <textarea id="black-prompt" rows="4"></textarea>
+            </div>
+            <div class="output-box black-output">
+                <h3>Black's Output History</h3>
+                <pre id="black-output">-</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+            crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+            integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+            crossorigin="anonymous"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
