@@ -2,7 +2,5 @@ Flask
 python-chess
 Pillow
 python-dotenv
-Flask-SocketIO
-cairosvg
 openai
 anthropic
